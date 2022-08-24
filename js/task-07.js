@@ -8,15 +8,14 @@ const refs = {
 
 }
 
-refs.inputEl.addEventListener('input', onInputChange);
+refs.inputEl.value = refs.inputEl.min;
 
-function onInputChange() {
-    refs.textEl.style.fontSize = refs.inputEl.value + 'px';
+
+const onInputChange = ({currentTarget}) =>
+    (refs.textEl.style.fontSize = `${currentTarget.value}px`);
     console.log(refs.textEl.style.fontSize);
-}
 
-
-
+refs.inputEl.addEventListener('input', onInputChange);
 
 
 
